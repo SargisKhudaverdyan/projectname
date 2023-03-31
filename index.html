@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 20px;
+    font-family: monospace;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+body p {
+    width: 70%;
+}
+p {
+    color: gold; 
+    background-color: purple;
+    width: 600px;
+    padding: 40px;
+    font-size: 70px;
+    text-shadow: 0 0 20px gold;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 20px purple;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 650px){
+    p {
+        max-width: 400px;
+        padding: 25px;
+        font-size: 34px;
+        border-radius: 5px;
+        background-color: purple;
+    }
+}
+    </style>
+</head>
+<body>
+    <p id="clock"></p>
+    <script>
+        setInterval(() => {
+    let today = new Date();
+    let h = today.getHours();
+    let m = today.getMinutes();
+    let s = today.getSeconds();
+    if(h < 10) {
+        h = `0${h}`
+    }
+    if(m < 10) {
+        m = `0${m}`
+    }
+    if(s < 10) {
+        s = `0${s}`
+    }
+    clock.innerText = `${h} : ${m} : ${s}`
+    // document.body.style.backgroundImage = 'url(https://wallpaperset.com/w/full/b/e/1/145099.jpg)';
+    // document.body.style.backgroundPosition = 'center'
+    // document.body.style.backgroundSize = 'cover'
+    document.body.style.background = 'gold'
+}, 1000);
+    </script>
+</body>
+</html>
